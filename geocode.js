@@ -1,27 +1,44 @@
-// Instructions: 
-// Build a Node application that takes in a location input via the command line, then geocodes it using the geocoder NPM package.
-// Then console.log the geocoding information for display.
-
-// Easier: User will provide the city and state in the following format: "Atlanta, GA", "Houston, TX"
-// Slightly More Challenging: User will provide the address in any format: "151 Sip Ave Jersey City, NJ", "Austin, TX", etc.
-
-// All: Be sure to console log the output using JSON.stringify in "pretty-print" format. 
-
-// ========================================================================================================================
-
-// Include the geocoder NPM package (Remember to run "npm install geocoder"!)
 
 
+$(document).ready(function() {
 
+//****************************//
 
-// Take in the command line arguments
+var myKey= "AIzaSyB6doLPrG5Th0zwPgg4rqEC5H-_LW5JL5g"
 
+//****************************// 
 
+  //when submit button is clicked
+  $("#enter").on("click", function() {  
+    //read value from form
+    var location = $("#location").val();
+    //check results
+    console.log("loc: "+ location);
+ 
+  
+//lat/lon info from google
 
+var queryGeoURL = "https://maps.googleapis.com/maps/api/geocode/json?address="+location+"&key=" + myKey
+console.log(queryGeoURL)
 
-// Build your address as an array or string
+$.ajax({url: queryGeoURL, method: 'GET'})
+      //create object
+      .done(function(geoResponse) {
 
+console.log(geoResponse)
 
+var lat = geoResponse.results[0].geometry.location.lat;
+var lng = geoResponse.results[0].geometry.location.lng;
 
+console.log(lat+","+lng);
 
-// Then use Geocoder NPM to geocode the address
+});
+  
+return false;
+
+});
+
+//****************************// 
+
+});
+
