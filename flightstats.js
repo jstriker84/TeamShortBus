@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var fSappId = "3bb6e9e5"
 	var fSappKey = "725fa65bd5d71ecd80d2acd493e4f562"
 	
+	// find an airline
 	//when airline button is clicked
 	$("#airline").on("click", function() {
 		// clear list
@@ -19,6 +20,8 @@ $(document).ready(function() {
 			$.ajax({url: queryAirline, method: 'GET'})
 			//create object
 			.done(function(aLResponse) {
+				// log response
+				console.log(aLResponse)
 				// loop thru data
 				for (i=0; i<aLResponse.airlines.length; i++){
 					// get name from response, set case, check for match to user input
@@ -34,7 +37,9 @@ $(document).ready(function() {
 			return false;
 		}; // end if input
 	}); // end on click
+	// find an airline
 
+	// find an airport
 	//when airport button is clicked
 	$("#airport").on("click", function() {
 		// clear list
@@ -50,6 +55,8 @@ $(document).ready(function() {
 			$.ajax({url: queryAirport, method: 'GET'})
 			//create object
 			.done(function(aPResponse) {
+				// log response
+				console.log(aPResponse)
 				// loop thru data
 				for (i=0; i<aPResponse.airports.length; i++){
 					// get name from response, set case, check for match to user input
@@ -65,27 +72,38 @@ $(document).ready(function() {
 			return false;
 		}; // end if input
 	}); // end on click
+	// find an airport
 
-/*
-console.log("airlines!!")
-console.log("you asked for: " + input)
-console.log(queryAirline)
-console.log(aLResponse)
-console.log("a.l"+aLResponse.airlines.length)
-console.log("XXXXXXXXXXXXXXX")
-console.log([i]+": "+aLResponse.airlines[i].name);
-console.log([i]+": "+aLResponse.airlines[i].fs);
-console.log("XXXXXXXXXXXXXXX")
-
-console.log("airports!!")
-console.log("you asked for: " + input)	
-console.log(queryAirport)
-console.log(aPResponse)
-console.log("a.l"+aPResponse.airports.length)
-console.log("XXXXXXXXXXXXXXX")
-console.log([i]+": "+aPResponse.airports[i].name);
-console.log([i]+": "+aPResponse.airports[i].fs);
-console.log("XXXXXXXXXXXXXXX")
-*/
+	// find a flight
+	$("#flights").on("click", function() {
+		// capture input, set case
+		var dep = $("#dep").val().toUpperCase()
+		var arr = $("#arr").val().toUpperCase()
+		var month = $("#month").val().toUpperCase()
+		var day = $("#day").val().toUpperCase()
+		var year = $("#year").val().toUpperCase()
+		// build query
+		var queryFlights = "https://api.flightstats.com/flex/schedules/rest/v1/json/from/"+dep+"/to/"+arr+"/departing/"+year+"/"+month+"/"+day+"?appId="+fSappId+"&appKey="+fSappKey
+		console.log(
+			'flights')
+		console.log(queryFlights)
+		// get data
+			$.ajax({url: queryFlights, method: 'GET'})
+			//create object
+			.done(function(fltResponse) {
+				//log results
+				console.log(fltResponse)
+				//log data
+				for (i=0; i<fltResponse.scheduledFlights.length; i++){
+				// get data from response, push to table
+					var arrTime = fltResponse.scheduledFlights[i].arrivalTime
+					var arrStr = arrTime.toString()
+					var time = arrStr.split("T")
+					$("#list2").append("<tr><td>"+fltResponse.scheduledFlights[i].brand+"</td><td>"+fltResponse.scheduledFlights[i].carrierFsCode+fltResponse.scheduledFlights[i].flightNumber+"</td><td>"+time[1]+"</td></tr>");
+				}  // end for loop
+			});  // end .done
+		return false;		
+	}); // end on click	
+	// find a flight
 
 });  // end document.ready

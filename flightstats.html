@@ -22,6 +22,7 @@
           <p>Find your airport code here</p>
           <button type="submit" id="airport" class="btn btn-default">Airports</button>
           </form>
+          <br>
           <table class="table table-striped">
             <thead>
               <tr>
@@ -34,15 +35,110 @@
           </table>
         </div>
         <!--end find airline or airport code-->
+        <!--find an arriveing or flight-->
+        <div class="col-md-4">
+          <br>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="dep" class="col-md-4 control-label">Departing Airport</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="dep" placeholder="departing from">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="arr" class="col-md-4 control-label">Arriving Airport</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="arr" placeholder="arriving at">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label for="month" class="col-md-3">Month:</label>
+                  <select class="form-inline col-md-3" id="month">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+                  <label for="day" class="col-md-3">Day:</label>
+                  <select class="form-inline col-md-3" id="day">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                  </select>                  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label for="year" class="col-md-3 control-label">Year</label>
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" id="year" placeholder="XXXX">
+                  </div>
+                  <div class="col-md-5">
+                    <button type="submit" id="flights" class="btn btn-default">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <br>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Airline</th>
+                <th>Flight</th>
+                <th>Arrival Time</th>
+              </tr>
+            </thead>
+            <tbody id="list2">
+            </tbody>
+          </table>
+        </div>
+        <!--end find a flight-->
+        <!-- -->
+        <div class="col-md-4">
         flight status
         airport delay index
         airport weather
-        <!-- -->
-        <div class="col-md-4">
-        </div>
-        <!-- -->
-        <!-- -->
-        <div class="col-md-4">
         </div>
         <!-- -->
       </div>
