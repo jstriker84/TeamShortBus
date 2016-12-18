@@ -11,38 +11,38 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
+          <form>
+          <div class="form-group">
+            <label for="text">Enter airline or airport to get code:</label>
+            <input type="text" class="form-control" id="input">
+          </div>
           <p>Find your airline code here</p>
           <button type="submit" id="airline" class="btn btn-default">Airlines</button>
           <br>
           <p>Find your airport code here</p>
           <button type="submit" id="airport" class="btn btn-default">Airports</button>
+          </form>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th id="choice">Airport/Airline</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody id="list">
+            </tbody>
+          </table>
         </div>
         <div class="col-md-4">
-          <div id="list">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
         <div class="col-md-4">
-          <form>
+          <!--<form>
             <div class="form-group">
               <label for="text">Enter location:</label>
               <input type="text" class="form-control" id="location">
             </div>
             <button type="submit" id="enter" class="btn btn-default">Submit</button>
-          </form>
+          </form>-->
         </div>
       </div>
     </div>

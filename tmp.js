@@ -13,7 +13,6 @@ $(document).ready(function() {
 	//when submit button is clicked
 	$("#airline").on("click", function() {  
 		// build query
-		$("#list").html("")
 		console.log("airlines!!")
 		var input = $("#input").val().toLowerCase()
 		if (input != "") {
@@ -35,8 +34,6 @@ $(document).ready(function() {
 						console.log([i]+": "+aLResponse.airlines[i].name);
 						console.log([i]+": "+aLResponse.airlines[i].fs);
 						console.log("XXXXXXXXXXXXXXX")
-						$("#choice").html("Airline")
-						$("#list").append("<tr><td>"+aLResponse.airlines[i].name+"</td><td>"+aLResponse.airlines[i].fs+"</td></tr>")						
 					}
 				}
 				});  // end .done
@@ -47,35 +44,19 @@ $(document).ready(function() {
 	//when submit button is clicked
 	$("#airport").on("click", function() {  
 		// build query
-		$("#list").html("")
 		console.log("airports!!")
-		var input = $("#input").val().toLowerCase()
-		if (input != "") {
-			console.log("you asked for: " + input)	
-			var queryAirport = "https://api.flightstats.com/flex/airports/rest/v1/json/active?appId="+fSappId+"&appKey="+fSappKey
-			console.log(queryAirport)
-			// get data from api
-			$.ajax({url: queryAirport, method: 'GET'})
-			//create object
-			.done(function(aPResponse) {
-				// look at data
-				console.log(aPResponse)
-				console.log("a.l"+aPResponse.airports.length)
-				for (i=0; i<aPResponse.airports.length; i++){
-					var name = aPResponse.airports[i].name.toLowerCase()
-					var check = name.search(input);
-					if (check != -1) {
-						console.log("XXXXXXXXXXXXXXX")
-						console.log([i]+": "+aPResponse.airports[i].name);
-						console.log([i]+": "+aPResponse.airports[i].fs);
-						console.log("XXXXXXXXXXXXXXX")
-						$("#choice").html("Airport")
-						$("#list").append("<tr><td>"+aPResponse.airports[i].name+"</td><td>"+aPResponse.airports[i].fs+"</td></tr>")
-					}
-				}
-			});  // end .done
-			return false;
-		}; // end if	
+		var input = $("#input").val()
+		console.log("you asked for: " + input)		
+		var queryAirport = "https://api.flightstats.com/flex/airports/rest/v1/json/active?appId="+fSappId+"&appKey="+fSappKey
+		console.log(queryAirport)
+		// get data from api
+		$.ajax({url: queryAirport, method: 'GET'})
+		//create object
+		.done(function(aPResponse) {
+			// look at data
+			console.log(aPResponse)
+		});  // end .done
+		return false;
 	}); // end on click
 
 /*
