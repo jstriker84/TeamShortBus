@@ -1,0 +1,26 @@
+{
+  "name": "travles",
+  "version": "1.0.0",
+  "description": "travling app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstriker84/TeamShortBus.git"
+  },
+  "author": "Laura, Frankie, Kaytlin, Evan and Jill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jstriker84/TeamShortBus/issues"
+  },
+  "homepage": "https://github.com/jstriker84/TeamShortBus#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mysql": "^2.12.0",
+    "sequelize": "^3.27.0"
+  }
+}
