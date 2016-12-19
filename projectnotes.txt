@@ -5,6 +5,6 @@ roles on the project
  - Frankie, and Kaitlyn for front end
  - Laura, Jillian, and Evan for mid/backend
 
- Monday 12/12
+ Monday 12/12-12/19
  F/K building front end
  L/J/E researching API's and datasets
