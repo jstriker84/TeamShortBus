@@ -1,0 +1,101 @@
+
+html, body {
+    height: 100%;
+}
+body { 
+    background: url("../img/background.jpg") no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 35px;
+}
+
+#masterDiv{
+    padding-top : 2rem;
+}
+
+#map{
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    frameborder: 0;
+    border:0;
+    padding-bottom: 2em;
+}
+
+h2 {
+    font-size: 70px;
+    color: #CEE8FF;
+    /*color: #fff;*/
+    font: solid bold;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#headingRow {
+    text-align: center-nowrap;
+    margin: 0 10 0 10;
+    background: rgba(0, 0, 0, 0.0);
+    color: blue;
+}
+
+#addressPanel {
+    margin-top: 1rem;
+}
+ 
+.container-fluid {
+    background: rgba(60, 60, 60, 0.0);
+}
+
+.container-fluid a {
+    color: black;
+}
+
+#usersName{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+#lastUser {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ddd;
+}
+
+#mission {
+    font-size: calc(1rem + 1.3vw);
+    /*color: #fff;*/
+    border: black;
+    font: solid bold;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    text-align: center;
+    padding: 25px 50px 0 30vw ;
+    height: 600px;
+    frameborder: 0;
+    border: 0;
+    /*color: #3498DB;*/
+    color: #A7CFE3;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background : rgba(0, 0, 0, 0.1);
+}
+#foursquareResults  {
+    padding-top: 2rem;
+    color: white;
+}
+.foursqSearch {
+    background: #4B56AA; 
+    background: -webkit-linear-gradient(left top, #4B56AA, #CEE8FF); 
+    background: -o-linear-gradient(bottom right, #4B56AA, #CEE8FF); 
+    background: -moz-linear-gradient(bottom right, #4B56AA, #CEE8FF); 
+    background: linear-gradient(to bottom right, #4B56AA, #CEE8FF);
+}
+.foursqSearch a {
+    color:white;
+}
+
+
+
