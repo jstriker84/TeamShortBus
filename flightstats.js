@@ -74,7 +74,8 @@ $(document).ready(function() {
 	}); // end on click
 	// find an airport code
 
-	// find an airline from code	//when airline button is clicked
+	// find an airline from code
+	//when airline button is clicked
 	$("#codeAL").on("click", function() {
 		// clear list
 		$("#list").html("")
@@ -97,8 +98,11 @@ $(document).ready(function() {
 			});  // end .done
 		return false;	
 		}; // end if input
-	}); // end on click	// find an airline from code
-	// find an airport from code	//when airport button is clicked
+	}); // end on click
+	// find an airline from code
+
+	// find an airport from code
+	//when airport button is clicked
 	$("#codeAP").on("click", function() {
 		// clear list
 		$("#list").html("")
@@ -127,6 +131,8 @@ $(document).ready(function() {
 
 	// find a flight
 	$("#flights").on("click", function() {
+		// clear list
+		$("#list2").html("")
 		// capture input, set case
 		var dep = $("#dep").val().toUpperCase()
 		var arr = $("#arr").val().toUpperCase()
@@ -135,8 +141,6 @@ $(document).ready(function() {
 		var year = $("#year").val().toUpperCase()
 		// build query
 		var queryFlights = "https://api.flightstats.com/flex/schedules/rest/v1/json/from/"+dep+"/to/"+arr+"/departing/"+year+"/"+month+"/"+day+"?appId="+fSappId+"&appKey="+fSappKey
-		console.log(
-			'flights')
 		console.log(queryFlights)
 		// get data
 			$.ajax({url: queryFlights, method: 'GET'})
@@ -153,11 +157,62 @@ $(document).ready(function() {
 					var arrTime = fltResponse.scheduledFlights[i].arrivalTime
 					var arrStr = arrTime.toString()
 					var timeA = arrStr.split("T")
-					$("#list2").append("<tr><td>"+fltResponse.scheduledFlights[i].carrierFsCode+fltResponse.scheduledFlights[i].flightNumber+"</td><td>"+timeD[1]+"</td><td>"+timeA[1]+"</td></tr>");
+					$("#list2").append("<tr><td>"+fltResponse.scheduledFlights[i].carrierFsCode+" "+fltResponse.scheduledFlights[i].flightNumber+"</td><td>"+timeD[1]+"</td><td>"+timeA[1]+"</td></tr>");
 				}  // end for loop
 			});  // end .done
 		return false;		
 	}); // end on click	
 	// find a flight
+
+	//flight status
+	$("#fltStat").on("click", function() {
+		// clear list
+		$("#list3").html("")
+		// capture input, set case
+		var carCode = $("#carCode").val().toUpperCase()
+		var fltNum = $("#fltNum").val().toUpperCase()
+		var monthStat = $("#monthStat").val().toUpperCase()
+		var dayStat = $("#dayStat").val().toUpperCase()
+		var yearStat = $("#yearStat").val().toUpperCase()
+		// build query
+		var queryFltStat = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/"+carCode+"/"+fltNum+"/arr/"+yearStat+"/"+monthStat+"/"+dayStat+"?appId="+fSappId+"&appKey="+fSappKey+"&utc=false"
+		console.log(queryFltStat)
+		// get data
+			$.ajax({url: queryFltStat, method: 'GET'})
+			//create object
+			.done(function(fltStatResponse) {
+				//log results
+				console.log(fltStatResponse);
+				console.log(fltStatResponse.flightStatuses)
+				//log data
+				console.log("length= "+fltStatResponse.flightStatuses.length)
+				for (i=0; i<fltStatResponse.flightStatuses.length; i++){
+					// get data from response
+					var status = fltStatResponse.flightStatuses[i].status
+					console.log(status)
+					var fltFrom = fltStatResponse.flightStatuses[i].departureAirportFsCode
+					var fltTo = fltStatResponse.flightStatuses[i].arrivalAirportFsCode
+					var depLate = fltStatResponse.flightStatuses[i].delays.departureRunwayDelayMinutes
+					var arrLate = fltStatResponse.flightStatuses[i].delays.arrivalGateDelayMinutes
+					//check if cancelled
+					if (status === "C") {
+						// get data from response, push to table
+						$("#list3").append("<tr><td>"+fltNum+"</td><td>"+fltFrom+"</td><td>"+fltTo+"</td><td>CANCELLED</td></tr>");
+					} else {
+						// get data from response, push to table
+						$("#list3").append("<tr><td>"+fltNum+"</td><td>"+fltFrom+"</td><td>"+fltTo+"</td><td>"+depLate+"</td><td>"+arrLate+"</td></tr>");
+					} // end if
+				}  // end for loop
+			});  // end .done
+		return false;		
+	}); // end on click	
+	//flight status
+
+	//airport status
+
+	//airport status
+
+
+
 
 });  // end document.ready
