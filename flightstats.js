@@ -183,13 +183,10 @@ $(document).ready(function() {
 			.done(function(fltStatResponse) {
 				//log results
 				console.log(fltStatResponse);
-				console.log(fltStatResponse.flightStatuses)
 				//log data
-				console.log("length= "+fltStatResponse.flightStatuses.length)
 				for (i=0; i<fltStatResponse.flightStatuses.length; i++){
 					// get data from response
 					var status = fltStatResponse.flightStatuses[i].status
-					console.log(status)
 					var fltFrom = fltStatResponse.flightStatuses[i].departureAirportFsCode
 					var fltTo = fltStatResponse.flightStatuses[i].arrivalAirportFsCode
 					var depLate = fltStatResponse.flightStatuses[i].delays.departureRunwayDelayMinutes
@@ -209,7 +206,33 @@ $(document).ready(function() {
 	//flight status
 
 	//airport status
-
+	$("#apStat").on("click", function() {
+		// clear list
+		$("#list4").html("")
+		// capture input, set case
+		var apCode = $("#apCode").val().toUpperCase()
+		// build query
+		var queryApStat = "https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/"+apCode+"?appId="+fSappId+"&appKey="+fSappKey+"&classification=5"
+		console.log(queryApStat)
+		// get data
+			$.ajax({url: queryApStat, method: 'GET'})
+			//create object
+			.done(function(apStatResponse) {
+				//log results
+				console.log(apStatResponse);
+				// get data from response
+				var score = apStatResponse.delayIndexes[0].normalizedScore
+				var totFlt = apStatResponse.delayIndexes[0].flights
+				var cancFlt = apStatResponse.delayIndexes[0].canceled
+				var onTime = apStatResponse.delayIndexes[0].onTime
+				var late15 = apStatResponse.delayIndexes[0].delayed15
+				var late30 = apStatResponse.delayIndexes[0].delayed30
+				var late45 = apStatResponse.delayIndexes[0].delayed45
+				// push to table
+				$("#list4").append("<tr><td>"+apCode+"</td><td>"+score+"</td><td>"+totFlt+"</td><td>"+cancFlt+"</td><td>"+onTime+"</td><td>"+late15+"</td><td>"+late30+"</td><td>"+late45+"</td></tr>");
+			});  // end .done
+		return false;		
+	}); // end on click
 	//airport status
 
 
