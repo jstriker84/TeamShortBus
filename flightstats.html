@@ -14,14 +14,26 @@
           <form>
           <div class="form-group">
             <label for="text">Enter airline or airport to get code:</label>
-            <input type="text" class="form-control" id="input">
+            <input type="text" class="form-control" id="airPL">
           </div>
-          <p>Find your airline code here</p>
+          <p>Find your airline code here:</p>
           <button type="submit" id="airline" class="btn btn-default">Airlines</button>
           <br>
-          <p>Find your airport code here</p>
+          <p>Find your airport code here:</p>
           <button type="submit" id="airport" class="btn btn-default">Airports</button>
           </form>
+          <hr>
+          <form>
+          <div class="form-group">
+            <label for="text">Enter code to get airline or airport:</label>
+            <input type="text" class="form-control" id="code">
+          </div>
+          <p>Find your airline here:</p>
+          <button type="submit" id="codeAL" class="btn btn-default">Airlines</button>
+          <br>
+          <p>Find your airport here:</p>
+          <button type="submit" id="codeAP" class="btn btn-default">Airports</button>
+          </form>          
           <br>
           <table class="table table-striped">
             <thead>
@@ -124,8 +136,8 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Airline</th>
                 <th>Flight</th>
+                <th>Departure Time</th>
                 <th>Arrival Time</th>
               </tr>
             </thead>
