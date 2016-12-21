@@ -8,3 +8,13 @@ roles on the project
  Monday 12/12-12/19
  F/K building front end
  L/J/E researching API's and datasets
+
+ Monday 12/19
+ modified direction/focus
+ front end is advanced, needs backend inputs
+ decieded to go with survey for destination
+ flight search/status
+ review of destination
+F/K mod front end for new focus
+L/J survey and database
+E file structure and server
