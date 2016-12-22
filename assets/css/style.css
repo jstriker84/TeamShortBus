@@ -8,7 +8,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-size: 35px;
+    font-size: 50px;
 }
 
 #masterDiv{
@@ -26,7 +26,7 @@ body {
 }
 
 h2 {
-    font-size: 70px;
+    font-size: 100px;
     color: #CEE8FF;
     /*color: #fff;*/
     font: solid bold;
@@ -38,7 +38,6 @@ h2 {
     text-align: center-nowrap;
     margin: 0 10 0 10;
     background: rgba(0, 0, 0, 0.0);
-    color: blue;
 }
 
 #addressPanel {
@@ -97,5 +96,12 @@ h2 {
     color:white;
 }
 
-
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+    text-align: center;
+}
 
