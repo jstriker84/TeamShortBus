@@ -69,6 +69,29 @@ h6 {
     height: 35px;
 }
 
+/* Survey */
+#survey {
+    font-size: 50px;
+}
+
+#submit {
+    background-color: #47afea;
+    border: none;
+}
+
+/* Modal */
+#myModalLabel {
+    font-family: 'Shrikhand', cursive;
+}
+
+/* Review */
+#reviewSubmit {
+    margin-top: 30px;
+    background-color: #47afea;
+    border: none;
+}
+
+/* Media Queries */
 @media(max-width:767px) {
     .intro-message {
         padding-bottom: 15%;
@@ -124,7 +147,7 @@ h6 {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background: url(../img/chairs.jpg) no-repeat center center;
     background-size: cover;
 }
 
