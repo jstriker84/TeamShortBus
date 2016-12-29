@@ -14,6 +14,9 @@ module.exports = function(app) {
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
+
+//put 'matching' for loops in /public/js/etc
+
     });
 
   });
