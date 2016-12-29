@@ -1,6 +1,0 @@
-Sunday
-decided on project direction
-created repo and talked about workflow
-roles on the project
- - Frankie, and Kaitlyn for front end
- - Laura, Jillian, and Evan for mid/backend
