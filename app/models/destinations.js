@@ -43,9 +43,6 @@ var Destination = sequelize.define("Destination", {
   blurb: {
     type: DataTypes.STRING
   },
-  createdAt: {
-    type: DataTypes.DATE
-  }
   });
 
   return Destination;
