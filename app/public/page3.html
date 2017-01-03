@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Safe Travels</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/landing-page.css" rel="stylesheet">
+  
+
+    <link href="https://fonts.googleapis.com/assets/css?family=Raleway|Shrikhand" rel="stylesheet">
+
+</head>
+<div class="screen2">;
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">SAFE TRAVELS</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="#services">SERVICES</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Safe Travels</h1>
+                        <h3>YOU'RE UNDER OUR WING</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+    <div class="row" id="masterDiv">
+        <div style="margin: 30px" class="col-sm-3 col-md-3">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+	                    <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-globe">
+                            </span> Where do you want to travel?</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+                  <!-- /.content-section-a -->
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <p id="homeSearch"><span class="glyphicon glyphicon-eye-open"></span> Travel Search</p>
+                                        <form id='city-form'><label for='byCityInput'>Address: </label><br><input type='text' id='searchByAddress' name='addressSearch' class='form-control'></form><br>
+                                        <form id='zip-form'><label for='byZipInput'>Zip Code: </label><br><input type='text' id='searchByZip' name='zipSearch' class='form-control'></form><br><input id='findZip' type='submit' value='Search'>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+              
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-cutlery">
+                            </span> Nearby Restaurants</a> 
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form class="search-form">
+                                <label for="sel1">Select a category</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Burger Joint</option>
+                                    <option>Pizza Place</option>
+                                    <option>Sandwich Place</option>
+                                    <option>Steakhouse</option>
+                                    <option>Food Trucks</option>
+                                    <option>Fast Food</option>
+                                    <option>BBQ</option>
+                                    <option>Mexican Restaurant</option>
+                                    <option>Indian Restaurant</option>
+                                    <option>Chinese Restaurant</option>
+                                    <option>Japanese Restaurant</option>
+                                    <option>Korean Restaurant</option>
+                                    <option>Vietnamese Restaurant</option>
+                                    <option>Ice Cream Shop</option>
+                                    <option>Bubble Tea</option>
+                                    <option>Coffee Shop</option>
+                                    <option>Dessert Shop</option>
+                                    <option>Pet Cafe</option>
+                                </select>
+                            </form>
+                            <form class="number-form">
+                                <label for="byNumberInput">Number of locations to retrieve (default 10):</label><br>
+                                <input type="number" name="numberSearch" class="form-control" id="numRecords1">
+                            </form>
+                            <form class="radius-form">
+                                <label for="byRadiusInput">Radius of Search (in meters)</label><br>
+                                <input type="number" name="ratingSearch" class="form-control" id="searchRadius1">
+                            </form>
+                            <br>
+                            <input id="findSearchRestaurants" type="submit" value="Search">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-flag">
+                            </span> Family Lifestyle</a> 
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form class="search-form">
+                                <label for="sel2">Select a category</label>
+                                <select class="form-control" id="sel2">
+                                    <option>Arcade</option>
+                                    <option>Theme Park</option>
+                                    <option>Water Park</option>
+                                    <option>Zoo</option>
+                                    <option>Aquarium</option>
+                                    <option>Museum</option>
+                                    <option>Performing Arts Venue</option>
+                                    <option>Indoor Play Area</option>
+                                    <option>Park</option>
+                                    <option>Playground</option>
+                                    <option>Elementary School</option>
+                                    <option>Middle School</option>
+                                    <option>High School</option>
+                                    <option>Bowling Alley</option>
+                                    <option>Laser Tag</option>
+                                    <option>Mini Golf</option>
+                                    <option>Roller Rink</option>
+                                    <option>Dog Run</option>
+                                    <option>Recreation Center</option>
+                                    <option>Bike Trail</option>
+                                    <option>Botanical Garden</option>
+                                    <option>Campground</option>
+                                    <option>Historic Site</option>
+                                </select>
+                            </form>
+                            <form class="number-form">
+                                <label for="byNumberInput">Number of locations to retrieve (default 10):</label><br>
+                                <input type="number" name="numberSearch" class="form-control" id="numRecords2">
+                            </form>
+                            <form class="radius-form">
+                                <label for="byRadiusInput">Radius of Search (in meters)</label><br>
+                                <input type="number" name="ratingSearch" class="form-control" id="searchRadius2">
+                            </form>
+                            <br>
+                            <input id="findSearchFamily" type="submit" value="Search">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-tree-conifer">
+                            </span> Healthy Lifestyle</a> 
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form class="search-form">
+                                <label for="sel3">Select a category</label>
+                                <select class="form-control" id="sel3">
+                                    <option>Gluten-free Restaurant</option>
+                                    <option>Juice Bar</option>
+                                    <option>Salad Place</option>
+                                    <option>Sandwich Place</option>
+                                    <option>Vegetarian / Vegan Restaurant</option>
+                                    <option>Gym</option>
+                                    <option>Recreation Center</option>
+                                    <option>Pilates Studio</option>
+                                    <option>Cycle Studio</option>
+                                    <option>Yoga Studio</option>
+                                    <option>Martial Arts Dojo</option>
+                                    <option>Sports Club</option>
+                                    <option>Soccer Field</option>
+                                    <option>Volleyball Court</option>
+                                    <option>Beach</option>
+                                    <option>Trail</option>
+                                    <option>Bike Trail</option>
+                                </select>
+                            </form>
+                            <form class="number-form">
+                                <label for="byNumberInput">Number of locations to retrieve (default 10):</label><br>
+                                <input type="number" name="numberSearch" class="form-control" id="numRecords3">
+                            </form>
+                            <form class="radius-form">
+                                <label for="byRadiusInput">Radius of Search (in meters)</label><br>
+                                <input type="number" name="ratingSearch" class="form-control" id="searchRadius3">
+                            </form>
+                            <br>
+                            <input id="findSearchHealthy" type="submit" value="Search">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"><span class="glyphicon glyphicon-education">
+                            </span> Professional Places</a> 
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form class="search-form">
+                                <label for="sel4">Select a category</label>
+                                <select class="form-control" id="sel4">
+                                    <option>Police Station</option>
+                                    <option>Business Center</option>
+                                    <option>Convention Center</option>
+                                    <option>Hospital</option>
+                                    <option>Veterinarian</option>
+                                    <option>Animal Shelter</option>
+                                    <option>Office</option>
+                                    <option>Parking</option>
+                                    <option>Post Office</option>
+                                    <option>Social Club</option>
+                                    <option>Spiritual Center</option>
+                                    <option>Bank</option>
+                                    <option>Clothing Store</option>
+                                    <option>Department Store</option>
+                                    <option>Drug Store</option>
+                                    <option>Supermarket</option>
+                                </select>
+                            </form>
+                            <form class="number-form">
+                                <label for="byNumberInput">Number of locations to retrieve (default 10):</label><br>
+                                <input type="number" name="numberSearch" class="form-control" id="numRecords4">
+                            </form>
+                            <form class="radius-form">
+                                <label for="byRadiusInput">Radius of Search (in meters)</label><br>
+                                <input type="number" name="ratingSearch" class="form-control" id="searchRadius4">
+                            </form>
+                            <br>
+                            <input id="findSearchPro" type="submit" value="Search">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven"><span class="glyphicon glyphicon-glass">
+                            </span> Nightlife</a> 
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form class="search-form">
+                                <label for="sel5">Select a category</label>
+                                <select class="form-control" id="sel5">
+                                    <option>Casino</option>
+                                    <option>Music Venue</option>
+                                    <option>Pool Hall</option>
+                                    <option>Drive-in Theatre</option>
+                                    <option>Lounge</option>
+                                    <option>NightClub</option>
+                                    <option>Beach Bar</option>
+                                    <option>Cocktail Bar</option>
+                                    <option>Gay Bar</option>
+                                    <option>Hookah Bar</option>
+                                    <option>Karaoke Bar</option>
+                                    <option>Sports Bar</option>
+                                    <option>Night Market</option>
+                                    <option>Strip Club</option>
+                                </select>
+                            </form>
+                            <form class="number-form">
+                                <label for="byNumberInput">Number of locations to retrieve (default 10):</label><br>
+                                <input type="number" name="numberSearch" class="form-control" id="numRecords5">
+                            </form>
+                            <form class="radius-form">
+                                <label for="byRadiusInput">Radius of Search (in meters)</label><br>
+                                <input type="number" name="ratingSearch" class="form-control" id="searchRadius5">
+                            </form>
+                            <br>
+                            <input id="findSearchNight" type="submit" value="Search">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight"><span class="glyphicon glyphicon-phone">
+                            </span> Contact Us</a>
+                        </h4>
+                    </div>   
+                    <div id="collapseEight" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <a href="https://www.linkedin.com/in/kaitlyn-e-adams-a1a88673" target="_blank">Kaitlyn Adams</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://www.linkedin.com/in/evan-anderson-4927b3130" target="_blank">Evan Anderson</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://www.linkedin.com/in/laura-fiig-713740111" target="_blank">Laura Fiig</a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                        <a href="https://www.linkedin.com/in/jillianstriker" target="_blank">Jillian Striker</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://www.linkedin.com/in/frankienicko?trk=nav_responsive_tab_profile" target="_blank">Frankie Nicko</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div style="margin: 30px" class="col-md-8 col-sm-8">
+                <div id="map"></div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div id="addressPanel" class="panel panel-default"><h4 id="homeAddress" ></h4></div>
+                        <div id="foursquareResults"></div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+         
+    <!-- /.content-section-a -->
+
+	<a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Recommend a safe spot:</h2>
+                    <br>
+                    <a href="#" class="btn btn-primary">Primary</a>
+                </div>
+               
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div style="text-align: center" class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                     </ul>
+                    <p class="copyright text-muted small">COPYRIGHT &copy; SAFE TRAVELS 2016. ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt2dM2UBZUzPm9J_ixh1N0gjjur-d9L7I&callback=initMap">
+
+    // src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt2dM2UBZUzPm9J_ixh1N0gjjur-d9L7I&callback=initMap">
+    </script>
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</div>
+
+</html>
