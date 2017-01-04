@@ -29,7 +29,8 @@ $( document ).ready(function() {
         console.log("next step!!")
         tableData(surveyData)
     } else {
-      $(".modal-body").text("Please answer all questions")
+      clearModal()
+      $("#dest").text("Please answer all questions")
     };  // end else
   };  // end captureData
 
@@ -68,7 +69,7 @@ $( document ).ready(function() {
   };  // end tableData
 
   function getWeather(match) {
-    var location = match.destination
+    var location = match.locName
     console.log("seven - location")
     console.log(location)
       //lat/lon info from google
@@ -86,9 +87,10 @@ $( document ).ready(function() {
 
   function popModal(match, weatherResponse) {
       // set data and call modal
-      $(".modal-body").text(match.destination)
-      //$("#????").html('<img src="'+match.photo+'"">')
-      //$("#????").text(match.blurb)
+      clearModal()
+      $("#dest").text(match.destination)
+      $("#pic").html('<img src="'+match.photo+'"">')
+      $("#blurb").text(match.blurb)
       console.log("11b - check data")
       console.log(match.destination)
       console.log(match.photo)
@@ -98,11 +100,20 @@ $( document ).ready(function() {
       console.log(weatherResponse.current.condition.text);
       console.log(weatherResponse.current.feelslike_f);
       console.log(weatherResponse.current.precip_in);
-      //$("#????").text(weatherResponse.current.temp_f)
-      //$("#????").text(weatherResponse.current.humidity)
-      //$("#????").text(weatherResponse.current.condition.text)
-      //$("#????").text(weatherResponse.current.feelslike_f)
-      //$("#????").text(weatherResponse.current.precip_in)      
+      $("#weather1").text(weatherResponse.current.temp_f+"F    "+weatherResponse.current.condition.text)
+      $("#weather2").text("Precipitation: "+weatherResponse.current.precip_in+" In.")
+      $("#weather3").text("Humidity: "+weatherResponse.current.humidity+"%")
+      $("#weather4").text("Feels like "+weatherResponse.current.feelslike_f+"F")
+  }
+
+  function clearModal() {
+      $("#dest").text("")
+      $("#pic").text("")
+      $("#blurb").text("")
+      $("#weather1").text("")
+      $("#weather2").text("")
+      $("#weather3").text("")
+      $("#weather4").text("")
   }
 
   ////////////////////////////////

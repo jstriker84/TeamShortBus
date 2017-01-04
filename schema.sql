@@ -5,6 +5,7 @@ CREATE TABLE destinations (
 	id INTEGER AUTO_INCREMENT NOT NULL,
 	PRIMARY KEY (id),
 	destination VARCHAR(100) NOT NULL,
+	locName VARCHAR(100) NOT NULL,
 	themeParks INTEGER NOT NULL,
 	roadTrip INTEGER NOT NULL,
 	nightlife INTEGER NOT NULL,
