@@ -31,7 +31,7 @@ function captureData(){
 
 function tableData(){
   //pull data from db
-  $.get("/api/destinations", function(data) {
+  $.get("/api/findDest", function(data) {
     console.log("three - pul from db");
     console.log(data);
     //destinations = data;
@@ -65,7 +65,35 @@ function getWeather () {
   var location = match.destination
   console.log("seven - location")
   console.log(location)
-  //Evan's weather code here!!
+    //lat/lon info from google
+  var queryWeatherURL = "http://api.apixu.com/v1/current.json?key=4fa30064f91c4277b4c225846162612&q=" + location
+  console.log(queryWeatherURL)
+  $.ajax({url: queryWeatherURL, method: 'GET'})
+  //create object
+  .done(function(weatherResponse) {
+    console.log("eight - weather object")
+    console.log(weatherResponse);
+    console.log("nine - weather data")    
+    console.log(weatherResponse.current.temp_f);
+    console.log(weatherResponse.current.humidity);
+    console.log(weatherResponse.current.wind_dir);
+    console.log(weatherResponse.current.wind_mph);
+    console.log(weatherResponse.current.feelslike_f);
+    console.log(weatherResponse.current.precip_in);
+    var temp = weatherResponse.current.temp_f;
+    var humidity = weatherResponse.current.humidity;
+    var windDir = weatherResponse.current.wind_dir;
+    var windMph = weatherResponse.current.wind_mph;
+    var feelsLike = weatherResponse.current.feelslike_f;
+    var precip = weatherResponse.current.precip_in;
+    console.log("ten - variables")
+    console.log(temp);
+    console.log(humidity);
+    console.log(windDir);
+    console.log(windMph);
+    console.log(feelsLike);
+    console.log(precip);    
+  });
   popModal()
 }
 
@@ -74,7 +102,12 @@ function popModal () {
   $("#????").text(match.destination)
   $("#????").html('<img src="'+match.photo+'"">')
   $("#????").text(match.blurb)
-  //more lines for weathe data calls
+  $("#????").text(temp)
+  $("#????").text(humidity)
+  $("#????").text(windDir)
+  $("#????").text(windMph)
+  $("#????").text(feelsLike)
+  $("#????").text(precip)
   $("#myModal").modal()  
 }
 
@@ -84,5 +117,17 @@ function popModal () {
 
 $("#submitReview").on("click", function() {
   $.post("/api/newReview", post, function() {
+    //push review to page
   });
  }); 
+
+//////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+
+
+
+  
+  
+
+  

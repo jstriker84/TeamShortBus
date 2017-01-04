@@ -7,6 +7,9 @@ var Destination = sequelize.define("Destination", {
   destination: {
     type: DataTypes.STRING
   },
+  locName: {
+    type: DataTypes.STRING
+  },
   themeParks: {
     type: DataTypes.INTEGER,
   },
@@ -43,9 +46,6 @@ var Destination = sequelize.define("Destination", {
   blurb: {
     type: DataTypes.STRING
   },
-  createdAt: {
-    type: DataTypes.DATE
-  }
   });
 
   return Destination;
