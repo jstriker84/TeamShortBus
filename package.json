@@ -4,7 +4,7 @@
   "description": "travling app",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha",
     "start": "node server.js"
   },
   "repository": {
@@ -22,5 +22,9 @@
     "express": "^4.14.0",
     "mysql": "^2.12.0",
     "sequelize": "^3.27.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
