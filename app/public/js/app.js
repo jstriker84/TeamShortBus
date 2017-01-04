@@ -25,7 +25,7 @@ function captureData(){
   console.log(surveyData.length)
   console.log(surveyData)
   //fix this to check for NaN
-  var a = surveyData.indexOf("NaN");
+  var a = surveyData.indexOf(NaN);
   alert(a)
 
   if (surveyData.length < 10) {
