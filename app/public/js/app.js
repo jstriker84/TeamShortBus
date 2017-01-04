@@ -136,11 +136,12 @@ $( document ).ready(function() {
     console.log("three - make model")
     console.log(newReview)
 
-
     $.post("/api/newReview", newReview, function() {
-      console.log("in")
+      
+      $("#reviews").append('<tr><td class="tblReview">'+newReview.review+'</td></tr>')
+
     });
-    console.log("out")
+    
    }); 
 
 
