@@ -25,8 +25,9 @@ module.exports = function(app) {
   app.post("/api/newReview", function(req, res) {
     console.log("reviews Data:");
     console.log(req.body);
+    console.log(req.body.review);
     db.Review.create({
-      text: req.body.text,
+      review: req.body.review,
     })
     .then(function(dbReview) {
       res.json(dbReview);
