@@ -24,12 +24,24 @@ function captureData(){
   console.log("two - survey data?")
   console.log(surveyData.length)
   console.log(surveyData)
+  //fix this to check for NaN
+  var a = surveyData.indexOf(NaN);
+  alert(a)
+
   if (surveyData.length < 10) {
     alert("Please answer all questions")
   } else {
     console.log("next step!!")
-    
-$.get("/api/findDest", function(data) {
+    tableData(surveyData)
+  };  // end else
+
+
+
+};  // end captureData
+
+function tableData(surveyData){
+  //pull data from db
+  $.get("/api/findDest", function(data) {
   console.log("two/three - survey data?")
   console.log(surveyData)
     console.log("three - pull from db");
@@ -57,9 +69,21 @@ $.get("/api/findDest", function(data) {
     //select destination at that position
     var match = data[matchLoc]
     console.log(match)
-  
+    // set data and call modal
+    //$("#????").text(match.destination)
+    //$("#????").html('<img src="'+match.photo+'"">')
+    //$("#????").text(match.blurb)
+    //$("#myModal").modal()
+    console.log("11b - check data")
+    console.log(match.destination)
+    console.log(match.photo)
+    console.log(match.blurb)
+    getWeather(match)
+ }); // end .get
+};  // end tableData
 
-var location = match.destination
+function getWeather(match) {
+  var location = match.destination
   console.log("seven - location")
   console.log(location)
     //lat/lon info from google
@@ -89,48 +113,56 @@ var location = match.destination
     console.log(windDir);
     console.log(windMph);
     console.log(feelsLike);
-    console.log(precip);    
+    console.log(precip);
+    // set data and call modal
+    //$("#????").text(temp)
+    //$("#????").text(humidity)
+    //$("#????").text(windDir)
+    //$("#????").text(windMph)
+    //$("#????").text(feelsLike)
+    //$("#????").text(precip)
+    //$("#myModal").modal() 
+    console.log("11b - check data")
+    console.log(temp)
+    console.log(humidity)
+    console.log(windDir)
+    console.log(windMph)
+    console.log(feelsLike)
+    console.log(precip)    
   });
-
-
-}); // end .get
-
-
-  };  // end else
-};  // end captureData
-
-function tableData(){
-  //pull data from db
   
-  //getWeather()
-};  // end tableData
-
-function getWeather () {
-  
-  popModal()
 }
 
-function popModal () {
-  // set data and call modal
-  $("#????").text(match.destination)
-  $("#????").html('<img src="'+match.photo+'"">')
-  $("#????").text(match.blurb)
-  $("#????").text(temp)
-  $("#????").text(humidity)
-  $("#????").text(windDir)
-  $("#????").text(windMph)
-  $("#????").text(feelsLike)
-  $("#????").text(precip)
-  $("#myModal").modal()  
-}
+////////////////////////////////
+
+
+
 
 //submit review
 
-$("#submitReview").on("click", function() {
-  $.post("/api/newReview", post, function() {
-    //push review to page
+$("#reviewSubmit").on("click", function() {
+  console.log("one - review clicked")
+  
+  var reviewInput = $("#textArea");
+  console.log("two - pull data")
+  console.log(reviewInput)
+
+  var newReview = {
+      review: reviewInput.val().trim()
+    };
+  console.log("three - make model")
+  console.log(newReview)
+
+
+  $.post("/api/newReview", newReview, function() {
+    console.log("in")
   });
+  console.log("out")
  }); 
 
 
 });
+
+   
+
+  
