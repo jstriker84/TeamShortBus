@@ -28,9 +28,20 @@ app.use(express.static("app/public"));
 require("./app/routes/api-routes.js")(app);
 require("./app/routes/html-routes.js")(app);
 
+//JawsDB
+
+if (process.env.JAWSDB_URL){
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host : "localhost",
+    user: "root",
+    password: "root",
+    database: "travelApp_db"
+  });
+};
+
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+app.listen(process.env.PORT || port);
