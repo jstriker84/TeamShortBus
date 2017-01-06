@@ -73,7 +73,7 @@ $( document ).ready(function() {
     console.log("seven - location")
     console.log(location)
       //lat/lon info from google
-    var queryWeatherURL = "http://api.apixu.com/v1/current.json?key=4fa30064f91c4277b4c225846162612&q=" + location
+    var queryWeatherURL = "https://api.apixu.com/v1/current.json?key=4fa30064f91c4277b4c225846162612&q=" + location
     console.log(queryWeatherURL)
     $.ajax({url: queryWeatherURL, method: 'GET'})
     //create object
